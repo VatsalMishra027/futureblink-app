@@ -1,0 +1,28 @@
+<div class="announcement-banner-futureblink" style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }}; text-align: center; padding: 10px; width: 100%; position: fixed; top: 0; left: 0; z-index: 999999;">
+  {% if shop.metafields.my_app.announcement != blank %}
+    {{ shop.metafields.my_app.announcement }}
+  {% else %}
+    Default Announcement! Set yours in the app.
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "target": "body",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    }
+  ]
+}
+{% endschema %}
